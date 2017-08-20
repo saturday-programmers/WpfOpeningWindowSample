@@ -59,9 +59,11 @@ namespace WpfOpeningWindowSample
             }
         }
 
-        #endregion
+		#endregion
 
-        public void ShowView<T>(T viewModel, Action closedEventHandler)
+		#region メソッド
+
+		public void ShowView<T>(T viewModel, Action closedEventHandler)
         {
             Window view;
             this.viewDic.TryGetValue(viewModel.GetType(), out view);
@@ -71,7 +73,6 @@ namespace WpfOpeningWindowSample
                 view.Owner = this.mainWindow;
                 this.closedEventDic[view.GetType()] = closedEventHandler;
                 view.Show();
-                //view.Visibility = Visibility.Visible;
             }
         }
 
@@ -82,7 +83,7 @@ namespace WpfOpeningWindowSample
             view?.Hide();
         }
 
-       
+		#endregion
 
-    }
+	}
 }

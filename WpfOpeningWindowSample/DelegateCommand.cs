@@ -5,6 +5,10 @@ using System.Windows.Input;
 
 namespace WpfOpeningWindowSample
 {
+    /// <summary>
+    /// 以下のサイトからコピーしたクラス。
+    /// http://blog.okazuki.jp/entry/20120421/1335015512
+    /// </summary>
     class DelegateCommand : ICommand
     {
         private static readonly Action EmptyExecute = () => { };

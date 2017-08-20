@@ -5,17 +5,29 @@ namespace WpfOpeningWindowSample.ViewModels
 {
     class MoelessViewModel
     {
-        public ICommand CloseCommand { get; }
+		#region プロパティ
 
-        public MoelessViewModel()
+		public ICommand CloseCommand { get; }
+
+		#endregion
+
+		#region コンストラクタ
+
+		public MoelessViewModel()
         {
             this.CloseCommand = new DelegateCommand(this.CloseWindow);
         }
 
-        private void CloseWindow()
+		#endregion
+
+		#region メソッド
+
+		private void CloseWindow()
         {
             App app = App.Current as App;
             app.CloseView(this.GetType());
         }
-    }
+
+		#endregion
+	}
 }
